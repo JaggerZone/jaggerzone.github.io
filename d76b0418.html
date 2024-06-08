@@ -1,0 +1,321 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>bandit闯关攻略 | Super小狗的奇妙书屋</title><meta name="author" content="SuperDog"><meta name="copyright" content="SuperDog"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="bandit12ssh bandit0@bandit.labs.overthewire.org -p 2220passwd:bandit0  bandit0123lscat readmepasswd:NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL  bandit1123lscat .&#x2F;-passwd:rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi  bandit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bandit闯关攻略">
+<meta property="og:url" content="https://jaggerzone.github.io/d76b0418.html">
+<meta property="og:site_name" content="Super小狗的奇妙书屋">
+<meta property="og:description" content="bandit12ssh bandit0@bandit.labs.overthewire.org -p 2220passwd:bandit0  bandit0123lscat readmepasswd:NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL  bandit1123lscat .&#x2F;-passwd:rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi  bandit">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jaggerzone.github.io/img/bandit.png">
+<meta property="article:published_time" content="2024-06-06T01:15:12.000Z">
+<meta property="article:modified_time" content="2024-06-06T06:00:02.170Z">
+<meta property="article:author" content="SuperDog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jaggerzone.github.io/img/bandit.png"><link rel="shortcut icon" href="/img/icon.png"><link rel="canonical" href="https://jaggerzone.github.io/d76b0418.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'bandit闯关攻略',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-06-06 14:00:02'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/coverbackground.css"  media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 7.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/vegetable-dog.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/bandit.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Super小狗的奇妙书屋"><span class="site-name">Super小狗的奇妙书屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">bandit闯关攻略</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-06T01:15:12.000Z" title="发表于 2024-06-06 09:15:12">2024-06-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-06T06:00:02.170Z" title="更新于 2024-06-06 14:00:02">2024-06-06</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="bandit闯关攻略"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="bandit"><a href="#bandit" class="headerlink" title="bandit"></a>bandit</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh bandit0@bandit.labs.overthewire.org -p 2220<br>passwd:bandit0<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit0"><a href="#bandit0" class="headerlink" title="bandit0"></a>bandit0</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>cat readme<br>passwd:NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit1"><a href="#bandit1" class="headerlink" title="bandit1"></a>bandit1</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>cat ./-<br>passwd:rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit2"><a href="#bandit2" class="headerlink" title="bandit2"></a>bandit2</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>cat spaces\ in\ this\ filename<br>passwd:aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit3"><a href="#bandit3" class="headerlink" title="bandit3"></a>bandit3</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>cd inhere/<br>ls<br>ls -a<br>cat .hidden<br>passwd:2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit4"><a href="#bandit4" class="headerlink" title="bandit4"></a>bandit4</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>cd inhere/<br>ls<br>file ./*<br>cat ./-file07<br>passwd:lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit5"><a href="#bandit5" class="headerlink" title="bandit5"></a>bandit5</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>cd inhere/<br>find -size 1033c<br>cat maybehere07/.file2<br>passwd:P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit6"><a href="#bandit6" class="headerlink" title="bandit6"></a>bandit6</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>find / -user bandit7 -group bandit6 -size 33c<br>cat /var/lib/dpkg/info/bandit7.password<br>passwd:z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit7"><a href="#bandit7" class="headerlink" title="bandit7"></a>bandit7</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>cat data.txt<br>^C<br>cat data.txt | grep millionth<br>passwd:TESKZC0XvTetK0S9xNwm25STk5iWrBvP<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit8"><a href="#bandit8" class="headerlink" title="bandit8"></a>bandit8</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>cat data.txt<br>sort data.txt | uniq -u<br>passwd:EN632PlfYiZbn3PhVK3XOGSlNInNE00t<br></code></pre></td></tr></table></figure>
+
+<p><strong>PS:<code>sort</code>是对文档内容进行排序，<code>uniq</code>是进行去重，<code>-u</code>是仅保留唯一行，但是需要注意的是，<code>uniq</code>需要与<code>sort</code>一起使用，因为<code>uniq</code>只是对相邻行相同的情况去重</strong></p>
+<h1 id="bandit9"><a href="#bandit9" class="headerlink" title="bandit9"></a>bandit9</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>cat data.txt<br>strings data.txt<br>passwd:G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s<br></code></pre></td></tr></table></figure>
+
+<p><strong>PS:strings将会逐行输出可识别的字符串，在遇到null或者乱码或者换行符时就会自动换行</strong></p>
+<h1 id="bandit10"><a href="#bandit10" class="headerlink" title="bandit10"></a>bandit10</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>cat data.txt<br>base64 -d data.txt<br>passwd:6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit11"><a href="#bandit11" class="headerlink" title="bandit11"></a>bandit11</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>cat data.txt<br>cat data.txt | tr &#x27;a-zA-Z&#x27; &#x27;n-za-mN-ZA-M&#x27;<br>passwd:JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv<br></code></pre></td></tr></table></figure>
+
+<p><strong>PS:<code>tr</code>是进行字符串转换，题中的<code>tr</code>是将大小写的a-z转换为n-za-m的顺序，其实就是将后13位英文字母与前13位英文字母替换位置</strong></p>
+<h1 id="bandit12"><a href="#bandit12" class="headerlink" title="bandit12"></a>bandit12</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>cat data.txt<br>file data.txt<br>cd /tmp/bandit12<br>cp ~/data.txt data<br>file data<br>xxd -r data data.out<br>file data.out<br>mv data.out data.gz<br>gzip -d data.gz<br>file data<br>mv data data.bz2<br>bzip2 -d data.bz2<br>file data<br>mv data data.gz<br>gzip -d data.gz<br>file data<br>mv data data.tar<br>tar -xvf data.tar<br>file data5.bin<br>mv data5.bin data.tar<br>tar -xvf data.tar<br>mv data6.bin data.tar<br>tar -xvf data.tar<br>file data8.bin<br>mv data8.bin data.gz<br>gzip -d data.gz<br>ls<br>file data<br>cat data<br>passwd:wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit13"><a href="#bandit13" class="headerlink" title="bandit13"></a>bandit13</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>cat sshkey.private<br>ssh bandit14@localhost -i sshkey.private -p 2220<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit14"><a href="#bandit14" class="headerlink" title="bandit14"></a>bandit14</h1><p>寻找bandit14的密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd /etc/bandit_pass<br>cat bandit14<br>passwd:fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq<br></code></pre></td></tr></table></figure>
+
+<p>使用<code>nc</code>命令发送密码给localhost，端口号为30000</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">nc localhost 30000<br>fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq<br>passwd:jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt<br></code></pre></td></tr></table></figure>
+
+<p><strong>PS:<code>nc</code>命令（又叫<code>ncat</code>）可以理解为网络上的<code>cat</code>命令，即可以实现网络上的读、写以及重定向数据，还可以进行远程连接、拷贝文件等功能</strong></p>
+<h1 id="bandit15"><a href="#bandit15" class="headerlink" title="bandit15"></a>bandit15</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">openssl s_client -connect localhost:30001 -ign_eof<br>jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt<br>passwd:JQttfApK4SeyHwDlI9SXGR50qclOAil1<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit16"><a href="#bandit16" class="headerlink" title="bandit16"></a>bandit16</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">扫描localhost31000-32000端口中开启的端口</span><br>nmap localhost -p 31000-32000<br><span class="hljs-meta prompt_">#</span><span class="language-bash">对开启的端口输入任意字符，排除返回相同字符的端口</span><br>nc localhost 31046 | echo &quot;Hello World&quot;<br>nc localhost 31518 | echo &quot;Hello World&quot;<br>nc localhost 31691 | echo &quot;Hello World&quot;<br>nc localhost 31790 | echo &quot;Hello World&quot;<br>nc localhost 31960 | echo &quot;Hello World&quot;<br><span class="hljs-meta prompt_">#</span><span class="language-bash">尝试连接31518端口，发现返回失败</span><br>openssl s_client -connect localhost:31518 -ign_eof<br>JQttfApK4SeyHwDlI9SXGR50qclOAil1<br><span class="hljs-meta prompt_">#</span><span class="language-bash">尝试连接31790端口，返回私钥</span><br>openssl s_client -connect localhost:31790 -ign_eof<br>JQttfApK4SeyHwDlI9SXGR50qclOAil1<br><span class="hljs-meta prompt_">#</span><span class="language-bash">在tmp文件夹内创建新文件夹</span><br>mkdir /tmp/zgx<br><span class="hljs-meta prompt_">#</span><span class="language-bash">创建ssh。private文件</span><br>vim ssh.private<br>-----BEGIN RSA PRIVATE KEY-----<br>MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ<br>imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ<br>Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu<br>DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW<br>JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX<br>x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD<br>KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl<br>J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd<br>d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC<br>YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A<br>vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama<br>+TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT<br>8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx<br>SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd<br>HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt<br>SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A<br>R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi<br>Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg<br>R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu<br>L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni<br>blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU<br>YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM<br>77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b<br>dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3<br>vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=<br>-----END RSA PRIVATE KEY-----<br><span class="hljs-meta prompt_">#</span><span class="language-bash">使用ssh.private文件登录bandit17</span><br>ssh bandit17@localhost -i /tmp/zgx/ssh.private -p 2220<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit17"><a href="#bandit17" class="headerlink" title="bandit17"></a>bandit17</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">cat /etc/bandit_pass/bandit17<br>bandit17 passwd:VwOSWtCA7lRKkTfbr2IDh6awj9RNZM5e<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>diff passwords.new passwords.old<br>passwd:hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit18"><a href="#bandit18" class="headerlink" title="bandit18"></a>bandit18</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh bandit18@bandit.labs.overthewire.org -p 2220 &quot;cat ./readme&quot;<br>passwd:awhqfNnAbc1naukrpqDYcF95h7HoMTrC<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit19"><a href="#bandit19" class="headerlink" title="bandit19"></a>bandit19</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">ll<br>./bandit20-do cat /etc/bandit_pass/bandit20<br>passwd:VxCazJaVykI6W36BkBU0mJTCM8rR95XT<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit20"><a href="#bandit20" class="headerlink" title="bandit20"></a>bandit20</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">echo &quot;VxCazJaVykI6W36BkBU0mJTCM8rR95XT&quot; | nc -l -p 30888 &amp;<br>./ suconnect 30888<br>passwd:NvEJF7oVjkddltPSrdKEFOllh9V1IBcq<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit21"><a href="#bandit21" class="headerlink" title="bandit21"></a>bandit21</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">cat /etc/cron.d<br>file *<br>cat cronjob_bandit22<br>cat /usr/bin/cronjob_bandit22.sh<br>cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv<br>passwd:WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit22"><a href="#bandit22" class="headerlink" title="bandit22"></a>bandit22</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd /etc/cron.d<br>cat cronjob_bandit23<br>cat /usr/bin/cronjob_bandit23.sh<br>echo I am user bandit23 | md5sum | cut -d &#x27; &#x27; -f 1<br>echo &quot;Copying passwordfile /etc/bandit_pass/bandit23 to /tmp/8ca319486bfbbc3663ea0fbe81326349&quot;<br>cat /tmp/8ca319486bfbbc3663ea0fbe81326349<br>passwd:QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit23"><a href="#bandit23" class="headerlink" title="bandit23"></a>bandit23</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd /etc/cron.d<br>ls<br>cat cronjob_bandit24<br>cat /usr/bin/cronjob_bandit24.sh<br>cd /tmp<br>mkdir zgx<br>chmod 777 zgx<br>cd zgx<br>vim getpass<br>cat /etc/bandit_pass/bandit24 &gt; /tmp/zgx/bandit24pass<br>chmod 777 getpass<br>cp getpass /var/spool/bandit24/foo<br><span class="hljs-meta prompt_">#</span><span class="language-bash">等待一段时间</span><br>ls<br>cat bandit24pass<br>passwd:VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit24"><a href="#bandit24" class="headerlink" title="bandit24"></a>bandit24</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs shell">nc localhost 30002<br>VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar 1234<br><span class="hljs-meta prompt_">#</span><span class="language-bash">Wrong!</span><br>cd /tmp/zgx<br>vim getpasswd.sh<br><span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/bash</span><br>passwd=&quot;VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar&quot;<br>for i in &#123;0000..4999&#125;<br>do<br>        echo $passwd&#x27; &#x27;$i<br>done | nc localhost 30002<br>./getpasswd.sh<br>vim getpasswd.sh<br><span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/bash</span><br>passwd=&quot;VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar&quot;<br>for i in &#123;0000..4999&#125;<br>do<br>        echo $passwd&#x27; &#x27;$i<br>done | nc localhost 30002<br>./getpasswd.sh<br>passwd:p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit25"><a href="#bandit25" class="headerlink" title="bandit25"></a>bandit25</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls<br>ssh -i bandit26.sshkey bandit26@localhost -p 2220<br>cat /etc/passwd | grep bandit26<br>cat /usr/bin/showtext<br><span class="hljs-meta prompt_">#</span><span class="language-bash">将终端窗口缩小</span><br>ssh -i bandit26.sshkey bandit26@localhost -p 2220<br>v<br>:e /etc/bandit_pass/bandit26<br>passwd:c7GvcKlw9mC7aUQaPx7nwFstuAIBw1o1<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit26"><a href="#bandit26" class="headerlink" title="bandit26"></a>bandit26</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">登录后发现登录不上，使用bandit25的老方法，缩小终端界面</span><br>v<br>:set shell=/bin/sh<br>:sh<br>ls<br>./bandit27-do cat /etc/bandit_pass/bandit27<br>passwd:YnQpBuifNMas1hcUFk70ZmqkhUU2EuaS<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit27"><a href="#bandit27" class="headerlink" title="bandit27"></a>bandit27</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd /tmp<br>git clone ssh://bandit27-git@localhost/home/bandit27-git/repo<br>cd repo<br>ls<br>cd repo<br>ls<br>cat README<br>passwd:AVanL161y9rsbcJIsFHuw35rjaOM19nR<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit28"><a href="#bandit28" class="headerlink" title="bandit28"></a>bandit28</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd /tmp<br>mkdir bandit28<br>cd bandit28<br>git clone ssh://bandit28-git@localhost/home/bandit28-git/repo<br>ls<br>cat README.md<br>git show<br>passwd:tQKvmcwNYcFS6vmPHIUSI3ShmsrQZK8S<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit29"><a href="#bandit29" class="headerlink" title="bandit29"></a>bandit29</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd /tmp/zgx<br>git ssh://bandit29-git@localhost:2220/home/b<br>andit29-git/repo<br>ls<br>cd repo<br>ls<br>cat README.md<br>git show<br>git branch -a<br>git checkout HEAD<br>ls<br>cat README.md<br>git checkout dev<br>ls<br>cat README.md<br>passwd:xbhV3HpNGlTIdnjUrdAlPzc2L6y9EOnS<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit30"><a href="#bandit30" class="headerlink" title="bandit30"></a>bandit30</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd /tmp<br>mkdir zgx30<br>cd zgx30<br>git clone ssh://bandit30-git@localhost:2220/home<br>/bandit30-git/repo<br>ls<br>cd repo<br>ls<br>cat README.md<br>git show<br>git branch -a<br>git checkout HEAD<br>ls<br>cat README.md<br>git checkout master<br>ls<br>cat README.md<br>git show-ref<br>git show 831a<br>passwd:OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit31"><a href="#bandit31" class="headerlink" title="bandit31"></a>bandit31</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd /tmp<br>mkdir zgx31<br>cd zgx31<br>git clone ssh://bandit31-git@localhost:2220/home<br>/bandit31-git/repo<br>ls<br>cd repo<br>ls<br>cat README.md<br>echo &#x27;May I come in?&#x27; &gt;&gt; key.txt<br>git add -f key.txt<br>git status<br>git commit -m &#x27;key.txt&#x27;<br>git push origin master<br>passwd:rmCBvG56y58BXzv98yZGdO7ATVL5dW8y<br></code></pre></td></tr></table></figure>
+
+<h1 id="bandit32"><a href="#bandit32" class="headerlink" title="bandit32"></a>bandit32</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$</span><span class="language-bash">0</span><br>cat /etc/bandit_pass/bandit33<br>passwd:odHo63fHiFqcWWJG9rLiLDtPm45KzUKy<br></code></pre></td></tr></table></figure>
+
+<p>完结撒花！！！！！！！！！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://JaggerZone.github.io">SuperDog</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://jaggerzone.github.io/d76b0418.html">https://jaggerzone.github.io/d76b0418.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://JaggerZone.github.io" target="_blank">Super小狗的奇妙书屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/bandit.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2980e34d.html" title="Vim学习"><img class="cover" src="/img/vim-study.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Vim学习</div></div></a></div><div class="next-post pull-right"><a href="/7fb3659b.html" title="docker学习"><img class="cover" src="/img/docker%E5%AD%A6%E4%B9%A0.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">docker学习</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/vegetable-dog.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">SuperDog</div><div class="author-info__description">一个小白的学习之路</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/JaggerZone"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Super小狗的书屋，请大家多多关照</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit"><span class="toc-number">1.</span> <span class="toc-text">bandit</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit0"><span class="toc-number">2.</span> <span class="toc-text">bandit0</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit1"><span class="toc-number">3.</span> <span class="toc-text">bandit1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit2"><span class="toc-number">4.</span> <span class="toc-text">bandit2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit3"><span class="toc-number">5.</span> <span class="toc-text">bandit3</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit4"><span class="toc-number">6.</span> <span class="toc-text">bandit4</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit5"><span class="toc-number">7.</span> <span class="toc-text">bandit5</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit6"><span class="toc-number">8.</span> <span class="toc-text">bandit6</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit7"><span class="toc-number">9.</span> <span class="toc-text">bandit7</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit8"><span class="toc-number">10.</span> <span class="toc-text">bandit8</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit9"><span class="toc-number">11.</span> <span class="toc-text">bandit9</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit10"><span class="toc-number">12.</span> <span class="toc-text">bandit10</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit11"><span class="toc-number">13.</span> <span class="toc-text">bandit11</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit12"><span class="toc-number">14.</span> <span class="toc-text">bandit12</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit13"><span class="toc-number">15.</span> <span class="toc-text">bandit13</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit14"><span class="toc-number">16.</span> <span class="toc-text">bandit14</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit15"><span class="toc-number">17.</span> <span class="toc-text">bandit15</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit16"><span class="toc-number">18.</span> <span class="toc-text">bandit16</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit17"><span class="toc-number">19.</span> <span class="toc-text">bandit17</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit18"><span class="toc-number">20.</span> <span class="toc-text">bandit18</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit19"><span class="toc-number">21.</span> <span class="toc-text">bandit19</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit20"><span class="toc-number">22.</span> <span class="toc-text">bandit20</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit21"><span class="toc-number">23.</span> <span class="toc-text">bandit21</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit22"><span class="toc-number">24.</span> <span class="toc-text">bandit22</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit23"><span class="toc-number">25.</span> <span class="toc-text">bandit23</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit24"><span class="toc-number">26.</span> <span class="toc-text">bandit24</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit25"><span class="toc-number">27.</span> <span class="toc-text">bandit25</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit26"><span class="toc-number">28.</span> <span class="toc-text">bandit26</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit27"><span class="toc-number">29.</span> <span class="toc-text">bandit27</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit28"><span class="toc-number">30.</span> <span class="toc-text">bandit28</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit29"><span class="toc-number">31.</span> <span class="toc-text">bandit29</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit30"><span class="toc-number">32.</span> <span class="toc-text">bandit30</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit31"><span class="toc-number">33.</span> <span class="toc-text">bandit31</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bandit32"><span class="toc-number">34.</span> <span class="toc-text">bandit32</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2980e34d.html" title="Vim学习"><img src="/img/vim-study.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vim学习"/></a><div class="content"><a class="title" href="/2980e34d.html" title="Vim学习">Vim学习</a><time datetime="2024-06-06T11:54:13.000Z" title="发表于 2024-06-06 19:54:13">2024-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/d76b0418.html" title="bandit闯关攻略"><img src="/img/bandit.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="bandit闯关攻略"/></a><div class="content"><a class="title" href="/d76b0418.html" title="bandit闯关攻略">bandit闯关攻略</a><time datetime="2024-06-06T01:15:12.000Z" title="发表于 2024-06-06 09:15:12">2024-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/7fb3659b.html" title="docker学习"><img src="/img/docker%E5%AD%A6%E4%B9%A0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="docker学习"/></a><div class="content"><a class="title" href="/7fb3659b.html" title="docker学习">docker学习</a><time datetime="2024-06-05T12:04:29.000Z" title="发表于 2024-06-05 20:04:29">2024-06-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/aec52b30.html" title="安装Hexo"><img src="/img/%E5%AE%89%E8%A3%85Hexo-SuperDog.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="安装Hexo"/></a><div class="content"><a class="title" href="/aec52b30.html" title="安装Hexo">安装Hexo</a><time datetime="2024-06-04T03:57:38.000Z" title="发表于 2024-06-04 11:57:38">2024-06-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/ff392be1.html" title="为HEXO添加背景音乐"><img src="/img/%E4%B8%BAHEXO%E6%B7%BB%E5%8A%A0%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90-SuperDog.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="为HEXO添加背景音乐"/></a><div class="content"><a class="title" href="/ff392be1.html" title="为HEXO添加背景音乐">为HEXO添加背景音乐</a><time datetime="2024-06-04T03:57:38.000Z" title="发表于 2024-06-04 11:57:38">2024-06-04</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By SuperDog</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法制,爱国,敬业,诚信,友善" data-fontsize="18px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
